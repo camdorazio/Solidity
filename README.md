@@ -8,7 +8,7 @@ The task is to build 3 Ethereum-compatible blockchain contracts to distribute pr
 
 There are 3 levels to building smart contracts for profit plan distributions, with each contract increasing in difficulty, complexity and capability. 
 
-### Level One: The Associate Profit Splitter Contract
+# Level One: The Associate Profit Splitter Contract
 
 The **Associate Profit Splitter** will accept Ether into the contract and divide the Ether evenly among the employees. This will allow the Human Resources department to pay employees quickly and efficiently. In this scenario, we will be paying the following employees:
 - employee_one or the CEO
@@ -30,7 +30,7 @@ First, open the Ganache application and choose the workspace you will be using. 
 
 Next, ensure you are logging into Metamask. Ensure that you are connected to the same network as your Ganache workkspace. 
 
-Before deploying your smart contract you will need to enter the ETH wallet addresses for each employee. We will choose 3 addresses from our existing Ganache worspace for testing purposes.
+Before deploying your smart contract you will need to enter the ETH wallet addresses for each employee. We will choose 3 addresses from our existing Ganache workspace for testing purposes.
 
 |![Ganache Wallets](./Screenshots/GanacheWalletAddresses.png "Ganache") |![APS .sol file](./Screenshots/AssociateProfitSplitter_PreDeploy_Check.png "Associate Profit Splitter")|
 |:---:|:---:|
@@ -58,7 +58,7 @@ Once the contract has been activated, let's test the functionality by transferri
 |:---:|:---:|:---:|
 | 4 ETH Deposit | 4 ETH Transact | 4 ETH Confirmation|
 
-You'll see that Ganache before and after, shows 19 Ether was taken from Account 1 and 6.33 Ether was deposited into each employee's account (Account 2, Account 3, and Account 4).
+You'll see that Ganache before and after, shows a total of 19 ETH was taken from the main wallet, i.e. HR, and 6.33 ETH was deposited into each employee's wallets (employee_one, employee_two, and employee_three).
 
 | ![15ETH](./Screenshots/Ganache15ETH.png "15 ETH Deposit") | ![15ETHTXN](./Screenshots/Ganache15ETHTXN.png "15 ETH transact")| ![15ETHconfirm](./Screenshots/Ganache15ETHTXNdetail.png "15 ETH confirmation") | 
 |:---:|:---:|:---:|
@@ -69,30 +69,44 @@ You'll see that Ganache before and after, shows 19 Ether was taken from Account 
 | 4 ETH Deposit | 4 ETH TXN | 4 ETH TXN Detail|
 
 
-### Level Two: The TieredProfitSplitter Contract
+# Level Two: The Tiered Profit Splitter Contract
 
-The **TieredProfitSplitter** will distribute different percentages of incoming Ether to employees at different tiers/levels. For example, the CEO gets paid 60%, CTO 25%, and Bob gets 15%.
+The **Tiered Profit Splitter** will distribute different percentages of Ether to employees at different tiers/levels rather than an 1/3 split to each employee. For this example, the CEO will receive 60%, the CTO will receive 25%, and Bob will receive 15%.
 
-![TPS](./Images/TieredProfitSplitter.png "Tiered Profit Splitter")
-
-After compiling the code, we deploy the contract with 0 wei, for which there is a fee charged to our Ether account.
-
-![TPS](./Images/predeployTieredProfitSplitter.png "PreDeploy Tiered Profit Splitter")
-
-Once the contract has been activated we will test the functionality by transferring 99 Ether into the employees' accounts.
-
-![TPS](./Images/deployTieredProfitSplitter.png "Tiered Profit Splitter")
-
-You'll see that Ganache before and after, shows 99 Ether was taken from Account 6 and Ether was deposited into each employee's account (59.40 to Account 2 (60%), 24.75 to Account 3 (25%), and 14.85 to Account 4 (15%)).
-
-|![TPS](./Images/Ganache_preTieredProfitSplitter.png "Ganache Pre-TieredProfitSplitter")|![TPS](./Images/Ganache_postTieredProfitSplitter.png "Ganache Post-TieredProfitSplitter")|
+|![TPS](./Screenshots/TieredProfitSplitter1.png "Tiered Profit Splitter 1") | ![TPS](./Screenshots/TieredProfitSplitter1.png "Tiered Profit Splitter 2") |
 |:---:|:---:|
-| Account Value Pre-TieredProfitSplitter | Account Value Post-TieredProfitSplitter |
+| Tiered Profit Splitter - Part 1 | Tiered Profit Splitter - Part 2 |
 
+We follow the same steps as Level One. After writing the Soldity code, then compile the code, to ensure there are no errors, and then deploy the contract with 0 wei, for which there is a ETH fee, or gas, charged to primary wallet (in this case HR).
 
-### Level Three: The `DeferredEquityPlan` Contract
+|![TPS Compile](./Screenshots/TieredProfitSplitterCompile.png "Tiered Profit Splitter Compile") | ![TPS Add Wallets](./Screenshots/TieredProfitSplitterAddWallet.png "Tiered Profit Splitter Add Wallets") |
+|:---:|:---:|
+| Tiered Profit Splitter - Compile | Tiered Profit Splitter - Add Employee Wallet Addresses |
 
-**`DeferredEquityPlan`** models traditional company stock plans. This contract will automatically manage 1000 shares with an annual distribution of 250 over 4 years for a single employee.
+|![TPS Deploy](./Screenshots/TieredProfitSplitterDeploy.png "Tiered Profit Splitter Deploy") | ![TPS MM confirm](./Screenshots/TieredProfitSplitterConfirmation.png "Tiered Profit Splitter MetaMask confirm") |
+|:---:|:---:|
+| Tiered Profit Splitter - Deploy | Tiered Profit Splitter - MetMask Confirmation |
+
+Let's confirm the contract has been successfully activated via Ganache.
+
+|![Ganache TPS TXN History](./Screenshots/GanacheTPSTXNhistory.png "Ganache Tiered Profit Splitter Deploy TXN History") | ![Ganache TPS TXN Detail](./Screenshots/GanacheTPSTXNdetail.png "Ganache Tiered Profit Splitter TXN Detail") |
+|:---:|:---:|
+| Ganache - Tiered Profit Splitter - TXN History | Ganache - Tiered Profit Splitter - TXN Detail |
+
+Once the contract has been activated we will test the functionality by transferring 10 Ether into the employees' accounts.
+|![TPS 10 ETH Deposit](./Screenshots/TPS10ETHdeposit.png " Tiered Profit Splitter 10 ETH Deposit") | ![TPS 10 ETH MM confirm](./Screenshots/TPS10ETHMMconfirm.png "Tiered Profit Splitter 10 ETH MM confirm") | ![TPS 10 ETH MM confirmation](./Screenshots/TPS10ETHMMconfirmation.png "Tiered Profit Splitter 10 ETH MM confirmation") |
+|:---:|:---:|:---:|
+| 10 ETH Deposit | 10 ETH confirm via MetaMask | 10 ETH MetaMask Confirmation|
+
+You'll see that Ganache wallet balances are now updated. 10 ETH was removed from the first account (i.e. HR) and ETH was deposited into each employee's account as follows: 6 ETH to employee_one (i.e. CEO 60%), 2.5 ETH to employee_two (i.e. CTO 25%), and 1.5 ETH to employee_three (i.e. Bob 15%).
+
+|![Ganache TPS Wallet Balances](./Screenshots/GanacheTPSbalances.png "Ganache TPS Wallet Balances") | ![Ganache TPS TXN History](./Screenshots/GanacheTPSTXNhist.png "Ganache TPS TXN History") | ![Ganache TPS TXN Detail](./Screenshots/GanacheTPS10ETHTXNdetail.png "Ganache TPS TXN Detail") |
+|:---:|:---:|:---:|
+| Ganache Wallet Balances| Ganache TXN History | Ganache TXN Detail|
+
+# Level Three: The Deferred Equity Plan Contract
+
+The **Deferred Equity Plan** models traditional company deferred compensation plans. For this example, the contract will automatically manage 1,000 shares of company stock per employee with an annual distribution of 250 shares for each employee over a 4 years time frame.
 
 ![DEP](./Images/DeferredEquityPlan.png "Deferred Equity Plan")
 
