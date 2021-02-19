@@ -6,6 +6,8 @@ The task is to build 3 Ethereum-compatible blockchain contracts to distribute pr
 |:---:|:---:|:---:|
 | Remix | MetaMask | Ganache|
 
+For this excercise, we will code and test the smart contracts on our local host. Once we've successfully coded and tested our Smart Contracts, we can deploy them to a public and live ETH blockchain Testnet such as Kovan or Ropsten.
+
 There are 3 levels to building smart contracts for profit plan distributions, with each contract increasing in difficulty, complexity and capability. 
 
 # Level One: The Associate Profit Splitter Contract
@@ -68,16 +70,21 @@ You'll see that Ganache before and after, shows a total of 19 ETH was taken from
 |:---:|:---:|:---:|
 | 4 ETH Deposit | 4 ETH TXN | 4 ETH TXN Detail|
 
-
 # Level Two: The Tiered Profit Splitter Contract
 
 The **Tiered Profit Splitter** will distribute different percentages of Ether to employees at different tiers/levels rather than an 1/3 split to each employee. For this example, the CEO will receive 60%, the CTO will receive 25%, and Bob will receive 15%.
 
-|![TPS](./Screenshots/TieredProfitSplitter1.png "Tiered Profit Splitter 1") | ![TPS](./Screenshots/TieredProfitSplitter1.png "Tiered Profit Splitter 2") |
+|![TPS](./Screenshots/TieredProfitSplitter1.png "Tiered Profit Splitter 1") | ![TPS](./Screenshots/TieredProfitSplitter2.png "Tiered Profit Splitter 2") |
 |:---:|:---:|
 | Tiered Profit Splitter - Part 1 | Tiered Profit Splitter - Part 2 |
 
-We follow the same steps as Level One. After writing the Soldity code, then compile the code, to ensure there are no errors, and then deploy the contract with 0 wei, for which there is a ETH fee, or gas, charged to primary wallet (in this case HR).
+*NOTE: For this coding excercise we are using the += syntax to perform a mathimatical addition function. However, if the wallets have a zero balance, this could cause issues as there is a flaw in Soldity using uint for mathematical operations. As a best practice, for any mathematical functions, it's highly recoomended to use SafeMath when coding in REMIX.*
+- import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
+
+*This only works in REMIX. Alternatively, you can paste the contents of SafeMath.sol from GitHub into your smart contract code. More information on SafeMath can be found here:*
+[Open Zepplin Docs](https://docs.openzeppelin.com/contracts/3.x/)
+
+We follow the same steps as Level One. After writing the Soldity code, then compile the code, to ensure there are no errors, and then deploy the contract with 0 wei, for which there is a ETH fee, or gas, charged to primary wallet (in this case HR).*
 
 |![TPS Compile](./Screenshots/TieredProfitSplitterCompile.png "Tiered Profit Splitter Compile") | ![TPS Add Wallets](./Screenshots/TieredProfitSplitterAddWallet.png "Tiered Profit Splitter Add Wallets") |
 |:---:|:---:|
@@ -106,20 +113,21 @@ You'll see that Ganache wallet balances are now updated. 10 ETH was removed from
 
 # Level Three: The Deferred Equity Plan Contract
 
-The **Deferred Equity Plan** models traditional company deferred compensation plans. For this example, the contract will automatically manage 1,000 shares of company stock per employee with an annual distribution of 250 shares for each employee over a 4 years time frame.
+The **Deferred Equity Plan** models traditional company deferred compensation plans. For this example, the contract will automatically distribute 1,000 shares of company stock per employee with an annual distribution of 250 shares for each employee over a 4 years time period.
 
-![DEP](./Images/DeferredEquityPlan.png "Deferred Equity Plan")
+|![DEP1](./Screenshots/DEP1.png "Deferred Equity Plan 1") | ![DEP2](./Screenshots/DEP2.png "Deferred Equity Plan 2") | ![DEP3](./Screenshots/DEP3.png "Deferred Equity Plan 3") |
+|:---:|:---:|:---:|
+| Deferred Equity Plan - 1 | Deferred Equity Plan - 2 | Deferred Equity Plan - 3 |
 
-Because this contract has a lock period, there was a **`DeferredEquityPlan_FastForward`** contract created to test the functionality of the contract based on false dates. Also, because of limited Ether in the test accounts, for test purposes, the 1000 total distribution shares was reduced to 100 and the 250 annual shares was reduced to 25.
+Because this contract has a lock period, there was a **DeferredEquityPlan_FastForward** contract created to test the functionality of the contract based on false dates. Also, because of limited ETH in my test HR wallet from Level 1 and Level 2 above, I will use 4 other wallets to test the code for the **Deferred Equity Plan**.
 
-![DEP](./Images/DeferredEquityPlan_FastForward.png "Test Deferred Equity Plan")
+|![DEPFF1](./Screenshots/DEPFF1.png "Deferred Equity Plan Fast Forward 1") | ![DEPFF2](./Screenshots/DEPFF2.png "Deferred Equity Plan Fast Forward 2") | ![DEPFF3](./Screenshots/DEPFF3.png "Deferred Equity Plan Fast Forward 3") |
+|:---:|:---:|:---:|
+| Deferred Equity Plan Fast Forward - 1 | Deferred Equity Plan Fast Forward - 2 | Deferred Equity Plan Fast Forward - 3 |
 
-After compiling the code, we deploy the contract with 0 wei, for which there is a fee charged to our Ether account.
+After compiling the Fast Forward code, deploy the contract with 0 wei, for which there is a fee, or gas, charged to main wallet address (i.e. HR).
 
-![DEP](./Images/predeployFastForward.png "PreDeploy DeferredEquityPlan FastForward")
 
-Once the contract has been activated we will test the functionality by transferring 25 Ether into the employees' accounts.
 
-![DEP](./Images/Error_FastForward100.png "Error DeferredEquityPlan FastForward")
+Once the contract has been activated we will test the functionality by transferring into the employees' accounts.
 
-This is where the error message occurred. After multiple attempts at correcting the code and recompiling and redeploying, the error message was not resolved.
