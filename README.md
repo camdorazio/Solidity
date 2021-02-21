@@ -127,7 +127,24 @@ Because this contract has a lock period, there was a **DeferredEquityPlan_FastFo
 
 After compiling the Fast Forward code, deploy the contract with 0 wei, for which there is a fee, or gas, charged to main wallet address (i.e. HR).
 
+|![DEPFFdeploy](./Screenshots/DEPFFdeploy.png "Deferred Equity Plan Fast Forward Deploy 1") | ![DEPFFMMconfirm](./Screenshots/DEPFFconfirm.png "Deferred Equity Plan Fast Forward MetaMask confirm") | ![DEPFFMMconfirmation](./Screenshots/DEPFFconfirmation.png "Deferred Equity Plan Fast Forward MetaMask confirmation") |
+|:---:|:---:|:---:|
+| Deferred Equity Plan Fast Forward Deploy | Deferred Equity Plan Fast Forward Deploy MetaMask Confirm | Deferred Equity Plan Fast Forward Deploy MetaMask Confirmation |
 
+|![GanacheDEPFFTXNhist](./Screenshots/GanacheDFFTXNhist.png "Ganache Deferred Equity Plan Fast Forward TXH history") | ![GanacheDEPFFTXNdetail](./Screenshots/GanacheDFFTXNdetail.png "Ganache Deferred Equity Plan Fast Forward TXN Detail") | 
+|:---:|:---:|
+| Ganache - Deferred Equity Plan Fast Forward TXN History | Ganache - Deferred Equity Plan Fast Forward TXN Detail |
 
-Once the contract has been activated we will test the functionality by transferring into the employees' accounts.
+Once deploying the contract sucessfully, test the distribute function by sending a transaction.
 
+|![DEPFFdist](./Screenshots/DFFdistribute.png "Deferred Equity Plan Fast Forward Distribute") | ![DEPFFdistMMconfirm](./Screenshots/DFFdistconfirm.png "Deferred Equity Plan Fast Forward Distribute MetaMask confirm") | ![DEPFFdistMMconfirmation](./Screenshots/DFFdistconfirmation.png "Deferred Equity Plan Fast Forward Distribute MetaMask confirmation") |
+|:---:|:---:|:---:|
+| Deferred Equity Plan Fast Forward Distribute | Deferred Equity Plan Fast Forward Distribute MetaMask Confirm | Deferred Equity Plan Fast Forward Distribute MetaMask Confirmation |
+
+|![GanacheDEPFFTXNhist](./Screenshots/GanacheDFFdistTXNhist.png "Ganache Deferred Equity Plan Fast Forward Distribute TXH history") | ![GanacheDEPFFTXNdetail](./Screenshots/GanacheDFFdistTXNdetail.png "Ganache Deferred Equity Plan Fast Forward Distribute TXN Detail") | 
+|:---:|:---:|
+| Ganache - Deferred Equity Plan Fast Forward TXN History | Ganache - Deferred Equity Plan Fast Forward TXN Detail |
+
+**CONGRATULATIONS!!** *We have successfully deployed and tested all 3 smart contracts. Now we can deploy these contracts to a live Testnet.*
+
+# Deploying all 3 smart contracts to a live Testnet
