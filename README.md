@@ -119,7 +119,7 @@ The **Deferred Equity Plan** models traditional company deferred compensation pl
 |:---:|:---:|:---:|
 | Deferred Equity Plan - 1 | Deferred Equity Plan - 2 | Deferred Equity Plan - 3 |
 
-Because this contract has a lock period, there was a **DeferredEquityPlan_FastForward** contract created to test the functionality of the contract based on false dates. Also, because of limited ETH in my test HR wallet from Level 1 and Level 2 above, I will use 4 other wallets to test the code for the **Deferred Equity Plan**.
+Because this contract has a lock period, there was a **DeferredEquityPlan_FastForward** contract created to test the functionality of the contract based on false dates. The original instructions ask to test the contract using a fast forward date of += 100 days. However, the distribution for shares in this contract is on a yearly basis. Therefore, in order to properly test the contract, we will use a fakenow fast forward date of += 365 days.
 
 |![DEPFF1](./Screenshots/DEPFF1.png "Deferred Equity Plan Fast Forward 1") | ![DEPFF2](./Screenshots/DEPFF2.png "Deferred Equity Plan Fast Forward 2") | ![DEPFF3](./Screenshots/DEPFF3.png "Deferred Equity Plan Fast Forward 3") |
 |:---:|:---:|:---:|
@@ -127,23 +127,31 @@ Because this contract has a lock period, there was a **DeferredEquityPlan_FastFo
 
 After compiling the Fast Forward code, deploy the contract with 0 wei, for which there is a fee, or gas, charged to main wallet address (i.e. HR).
 
-|![DEPFFdeploy](./Screenshots/DEPFFdeploy.png "Deferred Equity Plan Fast Forward Deploy 1") | ![DEPFFMMconfirm](./Screenshots/DEPFFconfirm.png "Deferred Equity Plan Fast Forward MetaMask confirm") | ![DEPFFMMconfirmation](./Screenshots/DEPFFconfirmation.png "Deferred Equity Plan Fast Forward MetaMask confirmation") |
-|:---:|:---:|:---:|
-| Deferred Equity Plan Fast Forward Deploy | Deferred Equity Plan Fast Forward Deploy MetaMask Confirm | Deferred Equity Plan Fast Forward Deploy MetaMask Confirmation |
+|![DEPFFcompile](./Screenshots/DEPFFcompile.png "Deferred Equity Plan Fast Forward Compile") | ![DEPFFdeploy](./Screenshots/DEPFFdeploy.png "Deferred Equity Plan Fast Forward Deploy 1") 
+|:---:|:---:|
+| Deferred Equity Plan Fast Forward Compile | Deferred Equity Plan Fast Forward Deploy |
+
+| ![DEPFFMMconfirm](./Screenshots/DEPFFconfirm.png "Deferred Equity Plan Fast Forward MetaMask confirm") | ![DEPFFMMconfirmation](./Screenshots/DEPFFconfirmation.png "Deferred Equity Plan Fast Forward MetaMask confirmation") |
+|:---:|:---:|
+| Deferred Equity Plan Fast Forward Deploy MetaMask Confirm | Deferred Equity Plan Fast Forward Deploy MetaMask Confirmation |
 
 |![GanacheDEPFFTXNhist](./Screenshots/GanacheDFFTXNhist.png "Ganache Deferred Equity Plan Fast Forward TXH history") | ![GanacheDEPFFTXNdetail](./Screenshots/GanacheDFFTXNdetail.png "Ganache Deferred Equity Plan Fast Forward TXN Detail") | 
 |:---:|:---:|
 | Ganache - Deferred Equity Plan Fast Forward TXN History | Ganache - Deferred Equity Plan Fast Forward TXN Detail |
 
-Once deploying the contract sucessfully, test the distribute function by sending a transaction.
+Once deploying the contract sucessfully, we need to test the distribution. First we need to fast forward the contract date from today to 1 year from now by clicking on the fastforward button. Again, we are sending a transaction for 0 wei and a fee, or gas, is incurred. Once the fast forward transaction is successful, we can then click the distrbute button to see if our code works. Again, the distrbute is a transaction for 0 wei and there is a fee, or gas, on this transaction. Once the distribute transaction is successful, you can click the dstributed_shares button. As you can see, the transaction did distribute 250 shares sucessfully.
 
-|![DEPFFdist](./Screenshots/DFFdistribute.png "Deferred Equity Plan Fast Forward Distribute") | ![DEPFFdistMMconfirm](./Screenshots/DFFdistconfirm.png "Deferred Equity Plan Fast Forward Distribute MetaMask confirm") | ![DEPFFdistMMconfirmation](./Screenshots/DFFdistconfirmation.png "Deferred Equity Plan Fast Forward Distribute MetaMask confirmation") |
-|:---:|:---:|:---:|
-| Deferred Equity Plan Fast Forward Distribute | Deferred Equity Plan Fast Forward Distribute MetaMask Confirm | Deferred Equity Plan Fast Forward Distribute MetaMask Confirmation |
-
-|![GanacheDEPFFTXNhist](./Screenshots/GanacheDFFdistTXNhist.png "Ganache Deferred Equity Plan Fast Forward Distribute TXH history") | ![GanacheDEPFFTXNdetail](./Screenshots/GanacheDFFdistTXNdetail.png "Ganache Deferred Equity Plan Fast Forward Distribute TXN Detail") | 
+|![DEPFFfakenowMMconfirm](./Screenshots/DEPfakenowFF.png "Deferred Equity Plan Fast Forward FakeNow MetaMask confirm") | ![DEPFFfakenowMMconfirmation](./Screenshots/DEPfakenowFFconfirm.png "Deferred Equity Plan Fast Forward FakeNow MetaMask confirmation") |
 |:---:|:---:|
-| Ganache - Deferred Equity Plan Fast Forward TXN History | Ganache - Deferred Equity Plan Fast Forward TXN Detail |
+ Deferred Equity Plan Fast Forward FakeNow MetaMask Confirm | Deferred Equity Plan Fast Forward FakeNow MetaMask Confirmation |
+
+|![DEPFFdistMMconfirm](./Screenshots/DEPFFdistconfirm.png "Deferred Equity Plan Fast Forward Distribute MetaMask confirm") | ![DEPFFdistMMconfirmation](./Screenshots/DEPFFdistconfirmation.png "Deferred Equity Plan Fast Forward Distribute MetaMask confirmation") |
+|:---:|:---:|
+ Deferred Equity Plan Fast Forward Distribute MetaMask Confirm | Deferred Equity Plan Fast Forward Distribute MetaMask Confirmation |
+
+|![GanacheDEPFFTXNhist](./Screenshots/GanacheDEPFFTXNhist.png "Ganache Deferred Equity Plan Fast Forward Distribute TXH history") | ![GanacheDEPFFTXNdetail](./Screenshots/GanacheDFFfakenowTXNdetail.png "Ganache Deferred Equity Plan Fast Forward FakeNow TXN Detail") | ![GanacheDEPFFTXNdetail](./Screenshots/GanacheDFFdistTXNdetail.png "Ganache Deferred Equity Plan Fast Forward Distribute TXN Detail") | 
+|:---:|:---:|:---:|
+| Ganache - Deferred Equity Plan Fast Forward FakeNow & Distribute TXN History | Ganache - Deferred Equity Plan Fast Forward FakeNow TXN Detail | Ganache - Deferred Equity Plan Fast Forward Distribute TXN Detail |
 
 **CONGRATULATIONS!!** *We have successfully deployed and tested all 3 smart contracts. Now we can deploy these contracts to a live Testnet.*
 
