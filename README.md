@@ -173,20 +173,21 @@ Below are screenshots of deployment for all 3 contracts from Remix along wth con
 | Associate Profit Splitter Remix Transact | Associate Profit Splitter Remix Transact Confirmation | Post Transact MetaMask Balances |
 
 # Tiered Profit Splitter
-|![TPSDeploy](./Screenshots/TPSRopstenDeploy.png "Tiered Profit Splitter Remix Deploy") | ![TPSDeployConf](./Screenshots/TPSRopstenDeployconf.png "Tiered Profit Splitter Remix Deploy Confirmation") | ![TPSMetaMaskBalances](./Screenshots/TPSMMBalances.png "Tiered Profit Splitter Transact MetaMask Balances") | 
-|:---:|:---:|:---:|
-| Tiered Profit Splitter Remix Deploy | Tiered Profit Splitter Remix Deploy Confirmation | MetaMask Balances |
+|![TPSDeploy](./Screenshots/TPSRopstenDeploy.png "Tiered Profit Splitter Remix Deploy") | ![TPSDeployConf](./Screenshots/TPSRopstenDeployconf.png "Tiered Profit Splitter Remix Deploy Confirmation") | 
+|:---:|:---:|
+| Tiered Profit Splitter Remix Deploy | Tiered Profit Splitter Remix Deploy Confirmation |
 
 ![TPSEtherscan](./Screenshots/TPSEtherscan.png "Tiered Profit Splitter Etherscan")
 
-|![TPSTransact](./Screenshots/TPSRopstenDeposit.png "Tiered Profit Splitter Remix Transact") | ![TPSTransactConf](./Screenshots/TPSRopstenDepositConf.png "Tiered Profit Splitter Remix Transact Confirmation") | ![TPSTransactMetaMaskBalances](./Screenshots/TPSRopstenDepositMM.png "TPSTransactMetaMaskBalances") | 
+|![TPSTransact](./Screenshots/TPSRopstenDeposit.png "Tiered Profit Splitter Remix Transact") | ![TPSTransactConf](./Screenshots/TPSRopstenDepositConf.png "Tiered Profit Splitter Remix Transact Confirmation") | ![TPSTransactMetaMaskBalances](./Screenshots/TPSRopstenDepositMM.png "TPS Transact MetaMask Balances") | 
 |:---:|:---:|:---:|
 | TieredProfit Splitter Remix Transact | Tiered Profit Splitter Remix Transact Confirmation | Post Transact MetaMask Balances |
 
 # Deferred Equity Plan
-|![DEPDeploy](./Screenshots/DEPRopstenDeploy.png "Deferred Equity Plan Remix Deploy") | ![DEPDeployConf](./Screenshots/DEPRopstenDeployconf.png "Deferred Equity Plan Remix Deploy Confirmation") | ![DEPMetaMaskBalances](./ScreenshotsDEP/MMBalances.png "Deferred Equity Plan MetaMaskBalances") | 
-|:---:|:---:|:---:|
-| Deferred Equity Plan Remix Deploy | Deferred Equity Plan Remix Deploy Confirmation | MetaMask Balances |
+|![DEPDeploy](./Screenshots/DEPRopstenDeploy.png "Deferred Equity Plan Remix Deploy") | ![DEPDeployConf](./Screenshots/DEPRopstenDeployconf.png "Deferred Equity Plan Remix Deploy Confirmation") |
+|:---:|:---:|
+| Deferred Equity Plan Remix Deploy | Deferred Equity Plan Remix Deploy Confirmation |
 
 ![DEPEtherscan](./Screenshots/DEPEtherscan.png "Deferred Equity Plan Etherscan")
 
+**CONGRATULATIONS!!** *We have successfully deployed and tested all 3 smart contracts to Ropsten Testnet!*
