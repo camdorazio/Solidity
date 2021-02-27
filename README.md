@@ -70,7 +70,7 @@ You'll see that Ganache before and after, shows a total of 19 ETH was taken from
 |:---:|:---:|:---:|
 | 4 ETH Deposit | 4 ETH TXN | 4 ETH TXN Detail|
 
-# Level Two: The Tiered Profit Splitter Contract
+# Level Two: The Tiered Profit Splitter Smart Contract
 
 The **Tiered Profit Splitter** will distribute different percentages of Ether to employees at different tiers/levels rather than an 1/3 split to each employee. For this example, the CEO will receive 60%, the CTO will receive 25%, and Bob will receive 15%.
 
@@ -111,7 +111,7 @@ You'll see that Ganache wallet balances are now updated. 10 ETH was removed from
 |:---:|:---:|:---:|
 | Ganache Wallet Balances| Ganache TXN History | Ganache TXN Detail|
 
-# Level Three: The Deferred Equity Plan Contract
+# Level Three: The Deferred Equity Plan Smart Contract
 
 The **Deferred Equity Plan** models traditional company deferred compensation plans. For this example, the contract will automatically distribute 1,000 shares of company stock per employee with an annual distribution of 250 shares for each employee over a 4 years time period.
 
@@ -156,3 +156,37 @@ Once deploying the contract sucessfully, we need to test the distribution. First
 **CONGRATULATIONS!!** *We have successfully deployed and tested all 3 smart contracts. Now we can deploy these contracts to a live Testnet.*
 
 # Deploying all 3 smart contracts to a live Testnet
+
+Now that we have sucessfully coded and tested our Smart Contracts on our Local Network, we can now deploy all 3 contracts to a live Testnet. For this example, we will deploy the contracts to the Ropsten Testnet due to limited availability of Testnet ETH on the Kovan Testnet network. The Associate Profit Splitter and the Tiered Profit Splitter will each be transacted on the network wth 2 ETH each
+
+Below are screenshots of deployment for all 3 contracts from Remix along wth confirmation screen prints from MetaMask and MetaMask balances.
+
+# Associate Profit Splitter on Ropsten
+|![APSDeploy](./Screenshots/APSRopstenDeploy.png "Associate Profit Splitter Remix Deploy") | ![APSDeployConf](./Screenshots/APSRopstenDeployconf.png "Associate Profit Splitter Remix Deploy Confirmation") | ![MetaMaskBalances](./Screenshots/MMBalances.png "MetaMaskBalances") | 
+|:---:|:---:|:---:|
+| Associate Profit Splitter Remix Deploy | Associate Profit Splitter Remix Deploy Confirmation | MetaMask Balances |
+
+![APSEtherscan](./Screenshots/APSEtherscan.png "Associate Profit Splitter Etherscan")
+
+|![APSTransact](./Screenshots/APSRopstenDeposit.png "Associate Profit Splitter Remix Transact") | ![APSTransactConf](./Screenshots/APSRopstenDepositConf.png "Associate Profit Splitter Remix Transact Confirmation") | ![APSTransactMetaMaskBalances](./Screenshots/APSRopstenDepositMM.png "Associate Profit Splitter Transact MetaMask Balances") | 
+|:---:|:---:|:---:|
+| Associate Profit Splitter Remix Transact | Associate Profit Splitter Remix Transact Confirmation | Post Transact MetaMask Balances |
+
+# Tiered Profit Splitter
+|![TPSDeploy](./Screenshots/TPSRopstenDeploy.png "Tiered Profit Splitter Remix Deploy") | ![TPSDeployConf](./Screenshots/TPSRopstenDeployconf.png "Tiered Profit Splitter Remix Deploy Confirmation") | ![TPSMetaMaskBalances](./Screenshots/TPSMMBalances.png "Tiered Profit Splitter Transact MetaMask Balances") | 
+|:---:|:---:|:---:|
+| Tiered Profit Splitter Remix Deploy | Tiered Profit Splitter Remix Deploy Confirmation | MetaMask Balances |
+
+![TPSEtherscan](./Screenshots/TPSEtherscan.png "Tiered Profit Splitter Etherscan")
+
+|![TPSTransact](./Screenshots/TPSRopstenDeposit.png "Tiered Profit Splitter Remix Transact") | ![TPSTransactConf](./Screenshots/TPSRopstenDepositConf.png "Tiered Profit Splitter Remix Transact Confirmation") | ![TPSTransactMetaMaskBalances](./Screenshots/TPSRopstenDepositMM.png "TPSTransactMetaMaskBalances") | 
+|:---:|:---:|:---:|
+| TieredProfit Splitter Remix Transact | Tiered Profit Splitter Remix Transact Confirmation | Post Transact MetaMask Balances |
+
+# Deferred Equity Plan
+|![DEPDeploy](./Screenshots/DEPRopstenDeploy.png "Deferred Equity Plan Remix Deploy") | ![DEPDeployConf](./Screenshots/DEPRopstenDeployconf.png "Deferred Equity Plan Remix Deploy Confirmation") | ![DEPMetaMaskBalances](./ScreenshotsDEP/MMBalances.png "Deferred Equity Plan MetaMaskBalances") | 
+|:---:|:---:|:---:|
+| Deferred Equity Plan Remix Deploy | Deferred Equity Plan Remix Deploy Confirmation | MetaMask Balances |
+
+![DEPEtherscan](./Screenshots/DEPEtherscan.png "Deferred Equity Plan Etherscan")
+

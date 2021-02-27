@@ -31,14 +31,14 @@ contract DeferredEquityPlan {
         // 1: `unlock_time` is less than or equal to `now`
         // 2: `distributed_shares` is less than the `total_shares`
         require(unlock_time <= now, "Unlock time can not be greater than today.");
-        require(distributed_shares < total_shares, "No more shares to distribute");
+        require(distributed_shares < total_shares, "No more shares to distribute.");
 
         // @TODO: Add 365 days to the `unlock_time`
         unlock_time += 365 days;     
 
         // @TODO: Calculate the shares distributed by using the function (now - start_time) / 365 days * the annual distribution
         // Make sure to include the parenthesis around (now - start_time) to get accurate results!
-        distributed_shares = (now - start_time)/365 days  * annual_distribution;
+        distributed_shares = ((now - start_time)/365 days)  * annual_distribution ;
 
         // double check in case the employee does not cash out until after 5+ years
         if (distributed_shares > 1000) {
